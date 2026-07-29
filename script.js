@@ -87,7 +87,7 @@ const questions = [
         scores: { five: 3, three: 1, web: 0 }
       },
       {
-        text: "興味のある行事を選んで参加したい",
+        text: "適度に自分のペースで楽しみたい",
         scores: { five: 1, three: 3, web: 1 }
       },
       {
@@ -125,7 +125,7 @@ const questions = [
         scores: { five: 3, three: 1, web: 0 }
       },
       {
-        text: "毎日は少し大変でも、週3日程度なら通えそう",
+        text: "午後からであれば通えそう",
         scores: { five: 1, three: 3, web: 1 }
       },
       {
