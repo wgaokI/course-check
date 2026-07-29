@@ -456,3 +456,573 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+/* ==============================
+   質問画面
+============================== */
+
+.question-header {
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.question-school-name {
+  color: var(--deep-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.question-school-name strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.text-button {
+  padding: 8px 13px;
+  color: var(--sub-text);
+  font-size: 0.74rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.progress-area {
+  margin-bottom: 17px;
+}
+
+.progress-text {
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--sub-text);
+  font-size: 0.75rem;
+}
+
+.progress-text strong {
+  color: var(--main-blue);
+  font-size: 0.83rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 3px rgba(25, 49, 64, 0.08);
+}
+
+.progress-bar {
+  width: 10%;
+  height: 100%;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      var(--main-blue),
+      #47bec9,
+      #72d7b2
+    );
+  transition: width 0.4s ease;
+}
+
+.question-card {
+  min-height: 510px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question-label {
+  margin: 0 0 15px;
+  color: var(--main-blue);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+.question-text {
+  max-width: 570px;
+  margin: 0 auto;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.6;
+}
+
+.question-support {
+  margin: 14px 0 27px;
+  color: var(--sub-text);
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.answer-list {
+  width: min(100%, 540px);
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.answer-button {
+  width: 100%;
+  min-height: 68px;
+  padding: 14px 17px;
+  display: grid;
+  grid-template-columns: 42px 1fr 28px;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-align: left;
+  border: 1px solid rgba(20, 126, 174, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 19px rgba(22, 93, 126, 0.07);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.answer-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(20, 126, 174, 0.34);
+  box-shadow: 0 12px 25px rgba(22, 93, 126, 0.12);
+}
+
+.answer-button.selected {
+  border-color: var(--main-blue);
+  background: var(--pale-blue);
+  transform: scale(0.985);
+}
+
+.answer-letter {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--main-blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+  border-radius: 13px;
+  background: var(--light-blue);
+}
+
+.answer-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.answer-arrow {
+  color: var(--main-blue);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.question-navigation {
+  width: min(100%, 540px);
+  margin: 22px auto 0;
+  text-align: left;
+}
+
+.previous-button {
+  padding: 9px 5px;
+  color: var(--sub-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.previous-button:disabled,
+.hidden-button {
+  visibility: hidden;
+}
+
+/* ==============================
+   診断中画面
+============================== */
+
+.loading-card {
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
+
+.loading-circle {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  border: 7px solid var(--light-blue);
+  border-top-color: var(--main-blue);
+  animation: diagnosis-spin 1s linear infinite;
+}
+
+.loading-circle span {
+  position: absolute;
+  inset: 13px;
+  border-radius: 50%;
+  background: rgba(20, 126, 174, 0.08);
+}
+
+.loading-dots {
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.loading-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--main-blue);
+  animation: loading-dot 1.1s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ==============================
+   結果画面
+============================== */
+
+.result-school-name {
+  margin-bottom: 18px;
+}
+
+.result-card {
+  padding-top: 41px;
+}
+
+.result-label {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 7px 14px;
+  color: var(--main-blue);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--pale-blue);
+}
+
+.result-heading {
+  margin: 0 0 19px;
+  color: var(--sub-text);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.result-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 17px;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 900;
+  border-radius: 23px;
+  background:
+    linear-gradient(
+      145deg,
+      var(--main-blue),
+      #45bdc7
+    );
+  box-shadow: 0 13px 30px rgba(20, 126, 174, 0.25);
+  transform: rotate(-4deg);
+}
+
+.result-icon span {
+  transform: rotate(4deg);
+}
+
+.result-title {
+  color: var(--main-blue);
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.result-catch {
+  max-width: 530px;
+  margin: 17px auto 25px;
+  color: var(--sub-text);
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+
+.result-reasons {
+  width: min(100%, 480px);
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.reason-item {
+  padding: 13px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.65;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: rgba(243, 251, 255, 0.85);
+}
+
+.reason-check {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 0.7rem;
+  border-radius: 50%;
+  background: var(--main-blue);
+}
+
+.second-result {
+  width: min(100%, 480px);
+  margin: 25px auto 0;
+  padding: 19px;
+  border: 1px dashed rgba(20, 126, 174, 0.31);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.second-result span,
+.second-result strong {
+  display: block;
+}
+
+.second-result span {
+  margin-bottom: 5px;
+  color: var(--sub-text);
+  font-size: 0.7rem;
+}
+
+.second-result strong {
+  color: var(--deep-blue);
+  font-size: 1.18rem;
+}
+
+.second-result p {
+  margin: 9px 0 0;
+  color: var(--sub-text);
+  font-size: 0.77rem;
+  line-height: 1.7;
+}
+
+.result-note {
+  max-width: 520px;
+  margin: 24px auto 0;
+  color: #718792;
+  font-size: 0.7rem;
+  line-height: 1.8;
+}
+
+/* ==============================
+   リンク・予約ボタン
+============================== */
+
+.action-area {
+  width: 100%;
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.action-heading {
+  margin: 0;
+  color: var(--deep-blue);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.action-message {
+  margin: 10px auto 22px;
+  color: var(--sub-text);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.action-button {
+  text-decoration: none;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    opacity 0.22s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+}
+
+.reservation-button {
+  width: min(100%, 430px);
+  min-height: 68px;
+  margin: 0 auto;
+  padding: 13px 18px 13px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  font-weight: 800;
+  text-align: left;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      100deg,
+      var(--deep-blue),
+      var(--main-blue),
+      #3cb9c6
+    );
+  box-shadow: 0 15px 32px rgba(7, 88, 125, 0.24);
+}
+
+.reservation-button small {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.82;
+}
+
+.action-arrow {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--deep-blue);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.sub-action-buttons {
+  width: min(100%, 430px);
+  margin: 12px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.school-button,
+.line-button {
+  min-height: 57px;
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--deep-blue);
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.5;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(22, 93, 126, 0.08);
+}
+
+.line-button {
+  color: #226b4d;
+  background: rgba(229, 250, 240, 0.96);
+}
+
+.sub-button-icon {
+  font-size: 0.69rem;
+  font-weight: 900;
+}
+
+.line-notice {
+  margin: 17px 0 0;
+  color: var(--sub-text);
+  font-size: 0.7rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   アニメーション
+============================== */
+
+@keyframes diagnosis-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-dot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-7px);
+  }
+}
+
+/* ==============================
+   スマートフォン
+============================== */
+
+@media (max-width: 600px) {
+  .question-header {
+    margin-bottom: 16px;
+  }
+
+  .question-card {
+    min-height: auto;
+    padding-top: 32px;
+  }
+
+  .answer-button {
+    min-height: 64px;
+    padding: 12px;
+    grid-template-columns: 36px 1fr 22px;
+    gap: 9px;
+  }
+
+  .answer-letter {
+    width: 35px;
+    height: 35px;
+    border-radius: 11px;
+  }
+
+  .answer-text {
+    font-size: 0.82rem;
+  }
+
+  .result-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .sub-action-buttons {
+    grid-template-columns: 1fr;
+  }
+}

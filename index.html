@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>あなたに合う通学スタイル診断｜わせがくＰＵＲＥ高等学校 早稲田キャンパス</title>
+  <title>
+    あなたに合う通学スタイル診断｜
+    わせがくＰＵＲＥ高等学校 早稲田キャンパス
+  </title>
 
   <meta
     name="description"
@@ -21,6 +24,7 @@
 
   <main class="site-container">
 
+    <!-- トップ画面 -->
     <section id="start-screen" class="screen active">
 
       <div class="school-name">
@@ -87,29 +91,198 @@
 
     </section>
 
-    <section id="preparation-screen" class="screen">
+    <!-- 質問画面 -->
+    <section id="question-screen" class="screen">
 
-      <div class="diagnosis-card compact-card">
+      <div class="question-header">
+        <div class="question-school-name">
+          わせがくＰＵＲＥ高等学校
+          <strong>早稲田キャンパス</strong>
+        </div>
 
-        <div class="main-icon small-icon" aria-hidden="true">
-          <span>!</span>
+        <button id="quit-button" class="text-button" type="button">
+          最初に戻る
+        </button>
+      </div>
+
+      <div class="progress-area">
+        <div class="progress-text">
+          <span id="question-category">高校生活について</span>
+          <strong>
+            <span id="current-number">1</span>
+            /
+            <span id="total-number">10</span>
+          </strong>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="1"
+          aria-valuemax="10"
+          aria-valuenow="1"
+        >
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="diagnosis-card question-card">
+
+        <p id="question-label" class="question-label">
+          QUESTION 01
+        </p>
+
+        <h2 id="question-text" class="question-text"></h2>
+
+        <p id="question-support" class="question-support"></p>
+
+        <div
+          id="answer-list"
+          class="answer-list"
+          aria-label="回答を選んでください"
+        ></div>
+
+        <div class="question-navigation">
+          <button
+            id="previous-button"
+            class="previous-button"
+            type="button"
+          >
+            ← 前の質問へ
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 診断中画面 -->
+    <section id="loading-screen" class="screen">
+
+      <div class="diagnosis-card compact-card loading-card">
+
+        <div class="loading-circle" aria-hidden="true">
+          <span></span>
         </div>
 
         <p class="section-label">
-          診断ページ準備中
+          CHECKING YOUR ANSWERS
         </p>
 
         <h2>
-          トップページが<br>
-          完成しました！
+          回答をもとに<br>
+          診断しています
         </h2>
 
         <p class="lead-text">
-          次に、10問の質問画面と診断結果を追加していきます。
+          あなたに合いそうな通学スタイルを確認しています。
         </p>
 
-        <button id="back-button" class="secondary-button" type="button">
-          トップに戻る
+        <div class="loading-dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 結果画面 -->
+    <section id="result-screen" class="screen">
+
+      <div class="school-name result-school-name">
+        <span>わせがくＰＵＲＥ高等学校</span>
+        <strong>早稲田キャンパス</strong>
+      </div>
+
+      <div class="diagnosis-card result-card">
+
+        <p class="result-label">
+          YOUR RESULT
+        </p>
+
+        <p class="result-heading">
+          あなたにおすすめの通学スタイルは…
+        </p>
+
+        <div id="result-icon" class="result-icon">
+          <span>✓</span>
+        </div>
+
+        <h2 id="result-title" class="result-title"></h2>
+
+        <p id="result-catch" class="result-catch"></p>
+
+        <div id="result-reasons" class="result-reasons"></div>
+
+        <div class="second-result">
+          <span>もう一つの候補</span>
+          <strong id="second-result-title"></strong>
+          <p id="second-result-text"></p>
+        </div>
+
+        <p class="result-note">
+          この診断は、通学スタイル選びの参考となる簡易診断です。
+          実際の学校生活や登校方法については、
+          学校見学会・個別相談で一緒に考えることができます。
+        </p>
+
+        <div class="action-area">
+          <p class="action-heading">
+            早稲田キャンパスをもっと知る
+          </p>
+
+          <p class="action-message">
+            学校の雰囲気や通学スタイルについて、
+            実際に見て、聞いて、確かめてみませんか？
+          </p>
+
+          <a
+            class="action-button reservation-button"
+            href="https://www.pure.wasegaku.ac.jp/ocreserve.php"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>まずはこちら</small>
+              学校見学会を予約する
+            </span>
+            <span class="action-arrow">→</span>
+          </a>
+
+          <div class="sub-action-buttons">
+
+            <a
+              class="action-button school-button"
+              href="https://www.pure.wasegaku.ac.jp/waseda/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="sub-button-icon">🏫</span>
+              <span>早稲田キャンパスを見る</span>
+            </a>
+
+            <a
+              class="action-button line-button"
+              href="https://lin.ee/ZT5w1eC"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="sub-button-icon">LINE</span>
+              <span>公式LINEを登録する</span>
+            </a>
+
+          </div>
+
+          <p class="line-notice">
+            学校見学会などの最新情報を受け取れる、
+            公式LINEへの登録もお忘れなく！
+          </p>
+        </div>
+
+        <button id="restart-button" class="secondary-button" type="button">
+          もう一度診断する
         </button>
 
       </div>
